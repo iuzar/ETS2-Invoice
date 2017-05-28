@@ -1,0 +1,16 @@
+﻿<Window x:Class="ETS2_Invoice.Register"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ETS2_Invoice"
+        mc:Ignorable="d"
+        Title="Register" Height="242" Width="290">
+    <Grid>
+        <TextBox x:Name="InputUsername" Height="23" Margin="79,36,79,0" TextWrapping="Wrap" Text="Benutzername" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="InputPassword" Margin="79,79,79,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="InputEmail" Height="23" Margin="79,119,79,0" TextWrapping="Wrap" Text="E-Mail" VerticalAlignment="Top"/>
+        <Button x:Name="BtnRegister" Content="Registrieren" Margin="101,169,101,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

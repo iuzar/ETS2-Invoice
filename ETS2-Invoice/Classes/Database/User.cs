@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ETS2_Invoice.Classes.Database
 {
-    class User
+    public class User
     {
         public int id, fk_creationpassword, is_admin;
         public string username, password;

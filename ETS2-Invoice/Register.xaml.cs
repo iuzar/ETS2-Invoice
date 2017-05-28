@@ -11,20 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using ETS2_Invoice.Classes.Database;
 
 namespace ETS2_Invoice
 {
     /// <summary>
-    /// Interaktionslogik für Main.xaml
+    /// Interaktionslogik für Register.xaml
     /// </summary>
-    public partial class Main : Window
+    public partial class Register : Window
     {
-        public Main()
+        public Register()
         {
             InitializeComponent();
-            User user = Login.user;
-            LblGreetUser.Content = "Hallo " + user.username;
         }
     }
 }

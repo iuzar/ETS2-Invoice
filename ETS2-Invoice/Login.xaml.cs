@@ -13,6 +13,10 @@ namespace ETS2_Invoice
     /// </summary>
     public partial class Login : Window
     {
+        public static User user;
+        private Main MainForm = null;
+
+
         public Login()
         {
             InitializeComponent();
@@ -29,13 +33,23 @@ namespace ETS2_Invoice
             try
             {
                 string response = Http.Send(url, values);
-                //User user = JsonConvert.DeserializeObject<User>(Http.Send(url, values));
-                MessageBox.Show(response);
+                user = JsonConvert.DeserializeObject<User>(Http.Send(url, values));
+                if (MainForm == null)
+                {
+                    MainForm = new Main();
+                }
+                MainForm.Show();
+                this.Close();
             }
             catch(Exception exception)
             {
                 MessageBox.Show(exception.ToString());
             }
+        }
+
+        private void BtnRegister_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
