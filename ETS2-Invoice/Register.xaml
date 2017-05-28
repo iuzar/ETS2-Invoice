@@ -10,7 +10,7 @@
         <TextBox x:Name="InputUsername" Height="23" Margin="79,36,79,0" TextWrapping="Wrap" Text="Benutzername" VerticalAlignment="Top"/>
         <PasswordBox x:Name="InputPassword" Margin="79,79,79,0" VerticalAlignment="Top"/>
         <TextBox x:Name="InputEmail" Height="23" Margin="79,119,79,0" TextWrapping="Wrap" Text="E-Mail" VerticalAlignment="Top"/>
-        <Button x:Name="BtnRegister" Content="Registrieren" Margin="101,169,101,0" VerticalAlignment="Top"/>
+        <Button x:Name="BtnRegister" Content="Registrieren" Margin="101,169,101,0" VerticalAlignment="Top" Click="BtnRegister_Click"/>
 
     </Grid>
 </Window>
