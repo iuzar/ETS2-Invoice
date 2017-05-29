@@ -28,9 +28,18 @@ namespace ETS2_Invoice
 
         private void BtnRegister_Click(object sender, RoutedEventArgs e)
         {
-            if (InputUsername.Text == string.Empty || InputPassword.Password == string.Empty || InputEmail.Text == string.Empty)
+            if (InputUsername.Text == string.Empty)
             {
-                MessageBox.Show("Bitte geben Sie alle benötigten Daten in die Felder ein!");
+                MessageBox.Show("Bitte geben Sie einen Benutzernamen ein!");
+                return;
+            } else if (InputPassword.Password == string.Empty)
+            {
+                MessageBox.Show("Bitte geben Sie ein Passwort ein!");
+                return;
+            }
+            else if (InputEmail.Text == string.Empty)
+            {
+                MessageBox.Show("Bitte geben Sie eine E-Mail-Adresse ein!");
                 return;
             }
 
@@ -44,12 +53,16 @@ namespace ETS2_Invoice
             {
                 string response = Http.Send(Login.url, values);
 
-                if (response == "taken") {
+                if (response == "username taken") {
                     MessageBox.Show("Der Benutzername ist bereits vergeben!");
                     return;
                 } else if (response == "email not valid")
                 {
-                    MessageBox.Show("The E-Mail adress is not valid!");
+                    MessageBox.Show("Die eingegebene E-Mail ist nicht valide!");
+                    return;
+                } else if (response == "email taken")
+                {
+                    MessageBox.Show("Die E-Mail-Adresse ist bereits vergeben!");
                     return;
                 }
 
@@ -59,6 +72,26 @@ namespace ETS2_Invoice
             catch (Exception exception)
             {
                 MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void OnGotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+
+            if (tb.Text == tb.Tag.ToString())
+            {
+                tb.Text = string.Empty;
+            }
+        }
+
+        private void OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+
+            if (tb.Text == string.Empty)
+            {
+                tb.Text = tb.Tag.ToString();
             }
         }
     }

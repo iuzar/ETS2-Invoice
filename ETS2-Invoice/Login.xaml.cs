@@ -2,6 +2,8 @@
 using System.Collections.Specialized;
 using System.Net.Http;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 using ETS2_Invoice.Classes;
 using ETS2_Invoice.Classes.Database;
 using Newtonsoft.Json;
@@ -56,7 +58,7 @@ namespace ETS2_Invoice
                 MainForm.Show();
                 this.Close();
             }
-            catch(Exception exception)
+            catch
             {
                 MessageBox.Show("Die eingegebenen Login Daten sind falsch!");
             }
@@ -73,6 +75,31 @@ namespace ETS2_Invoice
                 return;
             }
             RegistrationForm.Show();
+        }
+
+        private void OnGotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox) sender;
+
+            if (tb.Text == tb.Tag.ToString())
+            {
+                tb.Text = string.Empty;
+            }
+        }
+
+        private void OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+
+            if (tb.Text == string.Empty)
+            {
+                tb.Text = tb.Tag.ToString();
+            }
+        }
+
+        private void UIElement_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            System.Diagnostics.Process.Start(Login.url + "/forgotpassword.php");
         }
     }
 }

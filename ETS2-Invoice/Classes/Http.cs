@@ -17,8 +17,9 @@ namespace ETS2_Invoice.Classes
 
         public static string Send(string url, NameValueCollection values)
         {
-            using (var wb = new WebClient())
+            using (var wb = new WebClientEx())
             {
+                wb.Timeout = 4000;
                 var response = wb.UploadValues(url, "POST", values);
                 return System.Text.Encoding.Default.GetString(response);
             }
