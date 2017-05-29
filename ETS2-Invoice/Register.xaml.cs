@@ -54,6 +54,7 @@ namespace ETS2_Invoice
                 }
 
                 MessageBox.Show("Sie wurden erfolgreich registriert!" + Environment.NewLine + "Sie erhalten nun eine E-Mail mit Schritten zur aktivierung ihres Kontos");
+                this.Close();
             }
             catch (Exception exception)
             {
