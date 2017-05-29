@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ETS2_Invoice"
         mc:Ignorable="d"
-        Title="Login" Height="550" Width="400" ResizeMode="NoResize">
+        Title="Login - ETS2 Invoice" Height="550" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Images/invoice_logo_1.ico">
     <Grid>
         <TextBox x:Name="InputUsername" Height="23" Margin="122,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150"/>
         <PasswordBox x:Name="InputPassword" Margin="122,261,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150" Height="23
                      "/>
         <Button x:Name="BtnLogin" Content="Login" HorizontalAlignment="Left" Margin="122,320,0,0" VerticalAlignment="Top" Width="70" Height="20" Click="BtnLogin_Click"/>
-        <Image Height="112" VerticalAlignment="Top" Source="Images/Website2.png" Stretch="Fill" HorizontalAlignment="Left" Width="374" Margin="10,0,0,0"/>
+        <Image Height="156" VerticalAlignment="Top" Source="Images/teaser4.png" HorizontalAlignment="Left" Width="374" Margin="10,10,0,0" Stretch="UniformToFill"/>
         <Label Content="Passwort vergessen?" HorizontalAlignment="Left" Margin="122,289,0,0" VerticalAlignment="Top" Cursor="Hand" Background="{x:Null}" Foreground="#FF3D5D95" Width="149" HorizontalContentAlignment="Center"/>
         <Button x:Name="BtnRegister" Content="Registrieren" HorizontalAlignment="Left" Margin="202,320,0,0" VerticalAlignment="Top" Width="70" Click="BtnRegister_Click"/>
         <Button x:Name="BtnHelp" Content="Hilfe" HorizontalAlignment="Left" Margin="283,473,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.627,4.1"/>
